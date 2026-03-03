@@ -17,7 +17,6 @@ const FounderNote = () => {
                                 <span className="initials">JD</span>
                             </div>
                             <div className="founder-info">
-                                <h4>John Doe</h4>
                                 <p className="founder-role">CEO & Founder, Otomation</p>
                             </div>
                         </div>
