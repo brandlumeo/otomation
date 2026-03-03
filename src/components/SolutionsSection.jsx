@@ -25,7 +25,7 @@ const SolutionsSection = () => {
                         </div>
                     </div>
 
-                    <Link to="/solutions" className="btn btn-primary">
+                    <Link to="/contact" className="btn btn-primary">
                         Explore Solutions <ArrowRight size={20} style={{ marginLeft: '8px' }} />
                     </Link>
                 </div>

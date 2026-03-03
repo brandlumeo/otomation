@@ -98,7 +98,7 @@ const Contact = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    placeholder="John Doe"
+                                    placeholder=""
                                 />
                             </div>
 
@@ -111,7 +111,7 @@ const Contact = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    placeholder="john@company.com"
+                                    placeholder=""
                                 />
                             </div>
 
@@ -123,7 +123,7 @@ const Contact = () => {
                                     name="phone"
                                     value={formData.phone}
                                     onChange={handleChange}
-                                    placeholder="+971 50 000 0000"
+                                    placeholder=""
                                 />
                             </div>
 
@@ -136,7 +136,7 @@ const Contact = () => {
                                     value={formData.company}
                                     onChange={handleChange}
                                     required
-                                    placeholder="Otomation Trading LLC"
+                                    placeholder=""
                                 />
                             </div>
 
@@ -148,7 +148,7 @@ const Contact = () => {
                                     value={formData.message}
                                     onChange={handleChange}
                                     rows="4"
-                                    placeholder="How can we help you?"
+                                    placeholder=""
                                 ></textarea>
                             </div>
 

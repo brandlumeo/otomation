@@ -12,7 +12,7 @@ const IndustriesSection = () => {
                         From retail and healthcare to manufacturing and government entities, our e-invoicing solutions are tailored to meet the specific compliance needs of every sector.
                     </p>
 
-                    <Link to="/industries" className="btn btn-primary" style={{ background: 'white', color: '#0f172a', border: 'none' }}>
+                    <Link to="/contact" className="btn btn-primary" style={{ background: 'white', color: '#0f172a', border: 'none' }}>
                         View Industries <ArrowRight size={20} style={{ marginLeft: '8px' }} />
                     </Link>
                 </div>
