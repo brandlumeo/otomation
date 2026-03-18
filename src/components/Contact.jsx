@@ -12,6 +12,7 @@ const Contact = () => {
         company: '',
         message: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         setFormData({
@@ -20,30 +21,47 @@ const Contact = () => {
         });
     };
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     // Handle form submission logic here
-    //     console.log('Form submitted:', formData);
-    //     navigate('/thank-you');
-    // };
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-    
-        const subject = encodeURIComponent('New enquiry from Otomation UAE website');
-        const body = encodeURIComponent(
-            `Name: ${formData.name}
-    Email: ${formData.email}
-    Phone: ${formData.phone}
-    Company: ${formData.company}
-    Message:
-    ${formData.message}`
-        );
-    
-        // Opens the user’s default mail client with all data filled in
-        window.location.href = `mailto:info@otomation.com?subject=${subject}&body=${body}`;
-    
-        // Keep your existing behaviour (thank-you page) if you want:
-        // navigate('/thank-you');
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/info@otomation.ae", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    _subject: "New enquiry from Otomation UAE website",
+                    Name: formData.name,
+                    Email: formData.email,
+                    Phone: formData.phone,
+                    Company: formData.company,
+                    Message: formData.message,
+                    _template: "table"
+                })
+            });
+
+            if (response.ok) {
+                // Clear the form
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    company: '',
+                    message: ''
+                });
+                navigate('/thank-you');
+            } else {
+                alert("Something went wrong. Please try again or use our email directly.");
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            alert("Something went wrong. Please try again or use our email directly.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -152,8 +170,10 @@ const Contact = () => {
                                 ></textarea>
                             </div>
 
-                            <button type="submit" className="btn btn-primary full-width">
-                                Submit Inquiry <Send size={18} style={{ marginLeft: '8px' }} />
+                            <button type="submit" className="btn btn-primary full-width" disabled={isSubmitting}>
+                                {isSubmitting ? 'Submitting...' : (
+                                    <>Submit Inquiry <Send size={18} style={{ marginLeft: '8px' }} /></>
+                                )}
                             </button>
                         </form>
                     </div>

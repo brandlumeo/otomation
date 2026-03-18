@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, Home, Phone, Mail, MapPin, Linkedin, Twitter, Instagram, Facebook } from 'lucide-react';
 import './ThankYouPage.css';
 
 const ThankYouPage = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="thankyou-page">
             {/* Hero Thank You Section */}
