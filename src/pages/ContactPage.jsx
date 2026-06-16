@@ -1,9 +1,19 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Contact from '../components/Contact';
 
 const ContactPage = () => {
     return (
         <div style={{ paddingTop: '80px' }}>
+            <Helmet>
+                <title>Contact Otomation | UAE E-Invoicing Compliance Experts</title>
+                <meta name="description" content="Get in touch with Otomation for a free UAE e-invoicing readiness assessment. Our compliance experts are available 24/7. Based in Dubai, UAE." />
+                <link rel="canonical" href="https://otomation.ae/contact" />
+                <meta property="og:title" content="Contact Otomation | UAE E-Invoicing Compliance Experts" />
+                <meta property="og:description" content="Get in touch with Otomation for a free UAE e-invoicing readiness assessment. Our compliance experts are available 24/7. Based in Dubai, UAE." />
+                <meta property="og:url" content="https://otomation.ae/contact" />
+                <meta property="og:type" content="website" />
+            </Helmet>
             <div className="section-header" style={{ paddingTop: '2rem', paddingBottom: '2rem', textAlign: 'center', background: '#ffffff' }}>
                 <div className="container">
                     <h1 className="section-title" style={{ color: '#000000' }}>Contact Us</h1>
